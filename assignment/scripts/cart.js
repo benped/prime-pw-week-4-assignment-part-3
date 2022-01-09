@@ -12,6 +12,8 @@ function addItem(item) {
     return false;
   }
 }
+
+
 console.log(`Basket is currently ${basket}`)
 console.log(`Adding a kiwi: ${addItem('kiwi')}`);
 console.log(`Adding a apple: ${addItem('apple')}`);
@@ -51,9 +53,11 @@ console.log(`This should be an empty basket: ${basket}`);
 // const maxItems = 5;
 // realizing this needs to be at the top for the function to run inside the
 // addItem function. Interesting!
+// Is best practice declaring variables, then functions, then all programming
+// console.log stuff we do?
 
 function isFull() {
-  if (basket.length < maxItems){
+  if (basket.length < maxItems) {
     return false;
   } else {
     return true;
@@ -68,3 +72,18 @@ console.log(`Adding a cherry: ${addItem('cherry')}`);
 console.log(`Adding a banana: ${addItem('banana')}`);
 console.log(`Adding a orange: ${addItem('orange')}`);
 console.log(`Adding a apple: ${addItem('apple')}`);
+
+
+function removeItem(item) {
+  for (i of basket) {
+    if (item === i) {
+      basket.splice(basket.indexOf(item), 1);
+      return item;
+      break;
+    }
+  }
+}
+
+console.log(removeItem('cherry'));
+console.log(removeItem('pomegranite'));
+console.log(`Basket is now: ${basket}`);
